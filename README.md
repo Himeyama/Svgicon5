@@ -16,3 +16,9 @@ SVG2ICO is the software that convert to ICO from SVG Image.
 ```ps1
 ./createPackage
 ```
+
+## License
+The License of the software is MIT License.
+
+## Dependency
+This software depends on SVG.NET that license is Ms-PL.
