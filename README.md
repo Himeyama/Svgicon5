@@ -1,9 +1,7 @@
 # SVG2ICO
+SVG2ICO is the software that convert to ICO from SVG Image.
 
-## Create a package
-```ps1
-./createPackage
-```
+![Alt text](image.png)
 
 ## Install the package
 0. Extract `SVG2ICO`
@@ -14,3 +12,7 @@
     Set-ExecutionPolicy RemoteSigned
     ```
     
+## Create a package
+```ps1
+./createPackage
+```
