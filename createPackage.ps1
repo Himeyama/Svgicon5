@@ -15,13 +15,13 @@ function Remove($files, $appName) {
 
 function Build($projectFile, $appName) {
     Stop-App $appName
-    dotnet build $projectFile -c Release -r win10-x64
+    dotnet publish $projectFile -c Release -r win10-x64
 }
 
 function Compress-Package($binDir){
     $subDir = (Get-ChildItem "$binDir\x64\Release")[0].Name
     $target = "$binDir\x64\Release\$subDir\win10-x64"
-    Compress-Archive -Path $target,README.md,inst.ps1,uninst.ps1 -DestinationPath "SVG2ICO.zip" -Force
+    Compress-Archive -Path $target,AppConfig.json,README.md,inst.ps1,uninst.ps1,PotableInstaller.lnk -DestinationPath "SVG2ICO.zip" -Force
 }
 
 Remove "Svgicon5\bin" "SVG2ICO"

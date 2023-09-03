@@ -40,13 +40,13 @@
                 Margin="0,0,0,0"
                 Grid.Column="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image x:Name="AppFontIcon"
+                    <!-- <Image x:Name="AppFontIcon"
                         HorizontalAlignment="Left" 
                         VerticalAlignment="Center"
                         Source="Assets/Square44x44Logo.png" 
                         Width="16" 
                         Height="16"
-                        Margin="16, 0, 0, 0"/>
+                        Margin="16, 0, 0, 0"/> -->
                     <TextBlock 
                         x:Uid="AppTitle"
                         x:Name="AppTitle"
@@ -84,7 +84,7 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Margin="0, 16, 0, 0">
-                    <Button IsEnabled="False" x:Name="generateButton" x:Uid="Generate" Content="Generate" FontSize="20" Click="GenerateButton"></Button>
+                    <Button IsEnabled="False" Style="{StaticResource AccentButtonStyle}" x:Name="generateButton" x:Uid="Generate" Content="Generate" Click="GenerateButton"></Button>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

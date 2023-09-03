@@ -3,6 +3,8 @@ namespace Svgicon5;
 
 public class PNG2ICO
 {
+    public string icoPath {get; set;} = "";
+
     byte[] ConvertPngToByteArray(string filePath)
     {
         byte[] bytes = File.ReadAllBytes(filePath);
@@ -14,6 +16,7 @@ public class PNG2ICO
         Image image = Image.FromFile(filePath);
         width = image.Width;
         height = image.Height;
+        image.Dispose();
     }
 
     string ConvertByteArrayToHexString(byte[] byteArray)
@@ -22,11 +25,12 @@ public class PNG2ICO
         return hexString;
     }
 
-    public PNG2ICO(string[] pngs, string dir)
+    public PNG2ICO(string[] pngs, string dir, string filePath)
     {
         int n_pngs = pngs.Length;
         byte[] dat = new byte[] { 0x00, 0x00, 0x01, 0x00, (byte)n_pngs, 0x00 };
         long offset = 6 + n_pngs * 16;
+        string basename = Path.GetFileNameWithoutExtension(filePath);
 
         foreach (string png in pngs)
         {
@@ -52,6 +56,19 @@ public class PNG2ICO
             dat = dat.Concat(img_bytes).ToArray();
         }
 
-        File.WriteAllBytes($"{dir}\\icon.ico", dat);
+        icoPath = $"{dir}\\{basename}.ico";
+        File.WriteAllBytes(icoPath, dat);
+
+        foreach (string imgFile in pngs)
+        {
+            if (File.Exists(imgFile))
+            {
+                try{
+                    File.Delete(imgFile);
+                }catch{
+                    ;
+                }
+            }
+        }
     }
 }

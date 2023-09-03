@@ -5,6 +5,7 @@
 
     <Nullable>enable</Nullable>
     <WindowsPackageType>None</WindowsPackageType>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
@@ -19,8 +20,12 @@
     <SelfContained>true</SelfContained>
 
     <ApplicationManifest>app.manifest</ApplicationManifest>
-
-    <Platforms>x64;x86;ARM32;ARM64</Platforms>
+    <PublishSingleFile>true</PublishSingleFile>
+    <Platforms>x64</Platforms>
+    <NeutralLanguage>ja-JP</NeutralLanguage>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IsPublishable>True</IsPublishable>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />

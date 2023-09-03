@@ -55,7 +55,7 @@ namespace Svgicon5
 
             svgDocument = SvgDocument.Open(file.Path);
             string tmp = Path.GetTempPath();
-            int s = 300;
+            int s = 2048;
             string tmpImage = $"{tmp}\\svgicon5-{s}.png";
             svgDocument.Width = new SvgUnit(SvgUnitType.Pixel, s);
             svgDocument.Height = new SvgUnit(SvgUnitType.Pixel, s);
@@ -99,12 +99,13 @@ namespace Svgicon5
                     iconSizes.Append(size);
                     imgPaths.Append(imgFile);
                     bitmap.Save(imgFile, ImageFormat.Png);
+                    bitmap.Dispose();
                 }
             }
 
-            PNG2ICO png2ico = new(pngs, saveDir!);
+            PNG2ICO png2ico = new(pngs, saveDir!, file.Path);
 
-            _ = Dialog.CreateDialog(this, "保存しました", $"{saveDir} へ保存しました。");
+            _ = Dialog.CreateDialog(this, "保存しました", $"{png2ico.icoPath} へ保存しました。");
         }
 
         void ClickAbout(object sender, RoutedEventArgs e)

@@ -1,0 +1,13 @@
+{
+    "jaJP": {
+        "ApplicationName": "インストーラー",
+        "Document": "このソフトウェアは MIT ライセンスで提供されています。"
+    },
+    "enUS": {
+        "ApplicationName": "Installer",
+        "Document": "This software is provided under the MIT License."
+    },
+    "source": "win10-x64",
+    "applicationName": "SVG2ICO",
+    "description": "The software convert to multiple ICO from SVG image."
+}

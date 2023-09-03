@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About.Text" xml:space="preserve">
-    <value>Svgicon5 について</value>
+    <value>SVG2ICO について</value>
   </data>
   <data name="AppTitle.Text" xml:space="preserve">
     <value>SVG2ICO</value>
