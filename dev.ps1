@@ -129,11 +129,12 @@ if ($Args[0] -eq "run") {
     Build "Svgicon5\Svgicon5.csproj" "SVG2ICO"
     Compress-Package "Svgicon5\bin"
 } elseif ($Args[0] -eq "nsis"){
-    dotnet publish .\Svgicon5\Svgicon5.csproj -c Release
     $version = (Get-Date).ToString("yy.M.d")
+    dotnet publish .\Svgicon5\Svgicon5.csproj -c Release -p:Version=$version
     $date = (Get-Date).ToString("yyyyMMdd")
     $size = [Math]::Round((Get-ChildItem .\Svgicon5\bin\x64\Release\net7.0-windows10.0.19041.0 -Force -Recurse -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum / 1KB, 0, [MidpointRounding]::AwayFromZero)
     .'C:\Program Files (x86)\NSIS\makensis.exe' /DVERSION="$version" /DDATE="$date" /DSIZE="$size" installer.nsh
 } elseif ($Args[0] -eq "publish"){
-    dotnet publish .\Svgicon5\Svgicon5.csproj -c Release
+    $version = (Get-Date).ToString("yy.M.d")
+    dotnet publish .\Svgicon5\Svgicon5.csproj -c Release -p:Version=$version
 }
