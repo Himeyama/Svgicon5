@@ -1,28 +1,39 @@
 # SVG2ICO
-SVG2ICO is the software that convert to ICO from SVG Image.
+SVG2ICOは、SVG画像をICOに変換するソフトウェアです。
 
 <image width="600" src="https://github.com/Himeyama/Svgicon5/assets/39254183/c11780e5-4239-4922-9765-f044516289b0" />
 
-## Install the package
-1. Extract `SVG2ICO`
+## パッケージのインストール
+1. `SVG2ICO`を解凍します。
 
-2. If your computer had installed [PotableInstaller](https://github.com/Himeyama/Installer), click on PotableInstaller.lnk.
-   otherwise move to the next step (3.).
+2. コンピュータにPotableInstallerがインストールされている場合は、PotableInstaller.lnkをクリックします。
+   そうでない場合は、次のステップ（3.）に進みます。
 
-3. Run `onlineInstall.ps1` with PowerShell
-	if cannot install the software, try running the below command.
+3. PowerShellで`onlineInstall.ps1`を実行します。
+   ソフトウェアをインストールできない場合は、以下のコマンドを実行してみてください。
 
     ```ps1
     Set-ExecutionPolicy RemoteSigned
     ```
     
-## Create a package
+## 開発ツール
+
+### 実行
 ```ps1
-./createPackage
+./dev run
 ```
 
-## License
-The License of the software is MIT License.
+### インストール
+```ps1
+./dev install
+```
 
-## Dependency
-This software depends on SVG.NET that license is Ms-PL.
+### アンインストール
+```ps1
+./dev uninstall
+```
+
+### zip を生成
+```ps1
+./dev pack
+```
