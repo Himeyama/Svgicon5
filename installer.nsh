@@ -1,7 +1,7 @@
 !define MUI_ICON "SVG2ICO.ico"
 !define PRODUCT_NAME "SVG2ICO"
 !define INSTALL_DIR "$LOCALAPPDATA\SVG2ICO" # インストール先
-!define PUBLISH_DIR "Svgicon5\bin\x64\Release\net7.0-windows10.0.19041.0"
+!define PUBLISH_DIR "Svgicon5\bin\x64\Release\net7.0-windows10.0.19041.0\win-x64"
 !define EXEC_FILE "SVG2ICO.exe"
 !define PRODUCT_PUBLISHER "ひかり"
 
