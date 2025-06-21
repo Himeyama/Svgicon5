@@ -1,9 +1,13 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Linq;
+using System.IO;
+using System.Drawing;
+
 namespace Svgicon5;
 
 public class PNG2ICO
 {
-    public string icoPath {get; set;} = "";
+    public string IcoPath { get; set; } = "";
 
     byte[] ConvertPngToByteArray(string filePath)
     {
@@ -28,7 +32,7 @@ public class PNG2ICO
     public PNG2ICO(string[] pngs, string dir, string filePath)
     {
         int n_pngs = pngs.Length;
-        byte[] dat = new byte[] { 0x00, 0x00, 0x01, 0x00, (byte)n_pngs, 0x00 };
+        byte[] dat = [0x00, 0x00, 0x01, 0x00, (byte)n_pngs, 0x00];
         long offset = 6 + n_pngs * 16;
         string basename = Path.GetFileNameWithoutExtension(filePath);
 
@@ -56,16 +60,19 @@ public class PNG2ICO
             dat = dat.Concat(img_bytes).ToArray();
         }
 
-        icoPath = $"{dir}\\{basename}.ico";
-        File.WriteAllBytes(icoPath, dat);
+        IcoPath = $"{dir}\\{basename}.ico";
+        File.WriteAllBytes(IcoPath, dat);
 
         foreach (string imgFile in pngs)
         {
             if (File.Exists(imgFile))
             {
-                try{
+                try
+                {
                     File.Delete(imgFile);
-                }catch{
+                }
+                catch
+                {
                     ;
                 }
             }

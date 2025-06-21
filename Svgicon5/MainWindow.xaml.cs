@@ -29,7 +29,7 @@ namespace Svgicon5
             InitializeComponent();
             ExtendsContentIntoTitleBar = true;
             SetTitleBar(AppTitleBar);
-            setWindowSize(1200, 800);
+            setWindowSize(1440, 900);
         }
 
         void setWindowSize(int width, int height)
@@ -73,9 +73,9 @@ namespace Svgicon5
 
         void GenerateButton(object sender, RoutedEventArgs e)
         {
-            int[] sizes = new int[] { 16, 20, 24, 32, 40, 48, 64, 256, 30, 36, 60, 72, 80, 96 };
-            imgPaths = new string[] { };
-            iconSizes = new int[] { };
+            int[] sizes = [16, 20, 24, 32, 40, 48, 64, 256, 30, 36, 60, 72, 80, 96];
+            imgPaths = [];
+            iconSizes = [];
 
             string fileNameWithOutExtension = Path.GetFileNameWithoutExtension(file.Path);
             Bitmap bitmap;
@@ -86,31 +86,32 @@ namespace Svgicon5
 
             foreach (int size in sizes)
             {
-                CheckBox? checkBox = IconSize.FindName($"size{size}") as CheckBox;
-                if (checkBox == null) continue;
-                if ((bool)checkBox!.IsChecked!)
+                if (IconSize.FindName($"size{size}") is CheckBox checkBox)
                 {
-                    svgDocument.Width = new SvgUnit(SvgUnitType.Pixel, size);
-                    svgDocument.Height = new SvgUnit(SvgUnitType.Pixel, size);
-                    bitmap = svgDocument.Draw();
-                    string imgFile = $"{saveDir}\\{fileNameWithOutExtension}-{size}.png";
-                    Array.Resize(ref pngs, pngs.Length + 1);
-                    pngs[pngs.Length - 1] = imgFile;
-                    iconSizes.Append(size);
-                    imgPaths.Append(imgFile);
-                    bitmap.Save(imgFile, ImageFormat.Png);
-                    bitmap.Dispose();
+                    if ((bool)checkBox!.IsChecked!)
+                    {
+                        svgDocument.Width = new SvgUnit(SvgUnitType.Pixel, size);
+                        svgDocument.Height = new SvgUnit(SvgUnitType.Pixel, size);
+                        bitmap = svgDocument.Draw();
+                        string imgFile = $"{saveDir}\\{fileNameWithOutExtension}-{size}.png";
+                        Array.Resize(ref pngs, pngs.Length + 1);
+                        pngs[pngs.Length - 1] = imgFile;
+                        iconSizes.Append(size);
+                        imgPaths.Append(imgFile);
+                        bitmap.Save(imgFile, ImageFormat.Png);
+                        bitmap.Dispose();
+                    }
                 }
             }
 
             PNG2ICO png2ico = new(pngs, saveDir!, file.Path);
 
-            _ = Dialog.CreateDialog(this, "保存しました", $"{png2ico.icoPath} へ保存しました。");
+            _ = Dialog.CreateDialog(this, "保存しました", $"{png2ico.IcoPath} へ保存しました。");
         }
 
         void ClickAbout(object sender, RoutedEventArgs e)
         {
-            _ = Dialog.CreateDialog(this, "SVG2ICO", "© 2023 ひかり");
+            _ = Dialog.CreateDialog(this, "SVG2ICO", "© 2023-2025 ひかり");
         }
     }
 }

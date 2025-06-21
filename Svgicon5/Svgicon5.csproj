@@ -1,31 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <!-- アプリ名 -->
     <AssemblyName>SVG2ICO</AssemblyName>
-    <ApplicationIcon>Assets/SVG2ICO.ico</ApplicationIcon>
+    
+    <!-- アプリの説明 -->
+    <Description>This is a Windows application that generates ICO files from SVG images.</Description>
 
-    <Nullable>enable</Nullable>
-    <WindowsPackageType>None</WindowsPackageType>
-    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- 作者 -->
+    <Authors>MURATA Mitsuharu</Authors>
+
+    <!-- 法人・個人名 -->
+    <Company>MURATA Mitsuharu</Company>
+
+    <!-- 著作権情報 -->
+    <Copyright>(c) $([System.DateTime]::Now.Year) $(Company)</Copyright>
+
+    <!-- 発行先 -->
+    <PublishDir>publish</PublishDir>
+    
+    <!-- アイコン -->
+    <ApplicationIcon>Assets/App.ico</ApplicationIcon>
+
+    <!-- リポジトリの場所 -->
+    <RepositoryUrl>https://github.com/himeyama/Svgicon5</RepositoryUrl>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+
+    <!-- LICENSE & README.md の場所 -->
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
-
-    <UseWinUI>true</UseWinUI>
+    <TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-
-    <Platform>x64</Platform>
-    <ImplicitUsings>enable</ImplicitUsings>
-
     <SelfContained>true</SelfContained>
-
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <PublishSingleFile>true</PublishSingleFile>
-    <Platforms>x64</Platforms>
-    <NeutralLanguage>ja-JP</NeutralLanguage>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <IsPublishable>True</IsPublishable>
+    <Platform>x64</Platform>
+    <ApplicationManifest>app.manifest</ApplicationManifest> <!-- HiDpi 対応に必要 -->
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />
@@ -43,31 +53,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221109.1" />
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+    <!-- <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" /> -->
     <PackageReference Include="Svg" Version="3.4.4" />
-    <Manifest Include="$(ApplicationManifest)" />
+    <!-- <Manifest Include="$(ApplicationManifest)" /> -->
   </ItemGroup>
-
-  <!-- 
-    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-    Tools extension to be activated for this project even if the Windows App SDK Nuget
-    package has not yet been restored.
-  -->
-  <!-- <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Dialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup> -->
-
-  <!-- 
-    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
-    Explorer "Package and Publish" context menu entry to be enabled for this project even if 
-    the Windows App SDK Nuget package has not yet been restored.
-  -->
-  <!-- <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-  </PropertyGroup> -->
 </Project>

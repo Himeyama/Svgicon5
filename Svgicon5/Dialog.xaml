@@ -10,8 +10,8 @@
     <Grid>
         <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <TextBlock x:Name="dialogText" TextWrapping="Wrap" />
-            <HyperlinkButton Click="Click_GitHubLink" Margin="0, 8, 0, 0" Content="GitHub (Himeyama)"/>
-            <HyperlinkButton Click="Click_GitHubRepoLink" Margin="0, 8, 0, 0" Content="Svgicon5 (GitHub)"/>
+            <HyperlinkButton Click="Click_GitHubRepoLink" Margin="0, 8, 0, 0" Content="Himeyama / Svgicon5"/>
+            <HyperlinkButton Click="Click_GitHubLink" Margin="0, 8, 0, 0" Content="Himeyama (GitHub)"/>
         </StackPanel>
     </Grid>
 </Page>

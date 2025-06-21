@@ -1,7 +1,7 @@
 # SVG2ICO
 SVG2ICOは、SVG画像をICOに変換するソフトウェアです。
 
-<image width="600" src="https://github.com/Himeyama/Svgicon5/assets/39254183/c11780e5-4239-4922-9765-f044516289b0" />
+![](docs/image01.png)
 
 ## インストール方法
 

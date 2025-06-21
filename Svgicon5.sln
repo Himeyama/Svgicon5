@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.002.0
+VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Svgicon5", "Svgicon5\Svgicon5.csproj", "{D1ED9B69-F354-46F9-A6D8-C4D16B38B7A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svgicon5", "Svgicon5\Svgicon5.csproj", "{882624CE-24F2-B840-4815-B1B73ACE66AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1ED9B69-F354-46F9-A6D8-C4D16B38B7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1ED9B69-F354-46F9-A6D8-C4D16B38B7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1ED9B69-F354-46F9-A6D8-C4D16B38B7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1ED9B69-F354-46F9-A6D8-C4D16B38B7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882624CE-24F2-B840-4815-B1B73ACE66AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882624CE-24F2-B840-4815-B1B73ACE66AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882624CE-24F2-B840-4815-B1B73ACE66AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882624CE-24F2-B840-4815-B1B73ACE66AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7D2A4C4D-B92C-4917-99DA-164D99E9EADE}
+		SolutionGuid = {975B18A8-B7FE-4F24-8FD5-6F5F2DE46F08}
 	EndGlobalSection
 EndGlobal
