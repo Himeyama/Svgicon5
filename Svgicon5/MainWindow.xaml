@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Window
     x:Class="Svgicon5.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,45 +7,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
     <Grid RowDefinitions="40, *">
-        <!-- <Grid ColumnDefinitions="*" Grid.Row="0">
-            <MenuBar Grid.Column="0" >
-                <MenuBarItem x:Uid="File" Title="File">
-                    <MenuFlyoutItem x:Uid="Open" Text="Open..." Click="Open">
-                        <MenuFlyoutItem.KeyboardAccelerators>
-                            <KeyboardAccelerator Modifiers="Control" Key="O" />
-                        </MenuFlyoutItem.KeyboardAccelerators>
-                    </MenuFlyoutItem>
-                    <MenuFlyoutSeparator/>
-                    <MenuFlyoutItem x:Uid="Exit" Text="Exit" Click="Exit">
-                        <MenuFlyoutItem.KeyboardAccelerators>
-                            <KeyboardAccelerator Modifiers="Control" Key="X" />
-                        </MenuFlyoutItem.KeyboardAccelerators>
-                    </MenuFlyoutItem>
-                </MenuBarItem>
-
-                <MenuBarItem x:Uid="Help" Title="Help">
-                    <MenuFlyoutItem x:Uid="About" Text="About" Click="ClickAbout" />
-                </MenuBarItem>
-            </MenuBar>
-            <Border x:Name="AppTitleBar"
-                x:FieldModifier="Public"
-                VerticalAlignment="Center"
-                Height="40"
-                Margin="0,0,0,0"
-                Grid.Column="0">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock 
-                        x:Uid="AppTitle"
-                        x:Name="AppTitle"
-                        Text="SVG2ICO"
-                        VerticalAlignment="Center"
-                        Margin="12, 0, 0, 0"
-                        Style="{StaticResource CaptionTextBlockStyle}" />
-                </StackPanel>
-            </Border>
-        </Grid> -->
-
         <Grid Grid.Row="0">
             <Grid ColumnDefinitions="Auto, *">
                 <Grid ColumnDefinitions="Auto">
